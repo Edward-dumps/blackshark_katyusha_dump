@@ -1,0 +1,129 @@
+{
+  "localId": "1d38b5a7-7bfd-4635-95b5-a1eb59ee43e4",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "3285e6745a354dab493b3dc7a5f67527834b0a37",
+  "platform": 10,
+  "size": 41257791,
+  "updatedTime": 0,
+  "version": "1.0",
+  "authors": {
+    "fallback": "黑鲨GXD"
+  },
+  "designers": {
+    "fallback": "黑鲨GXD"
+  },
+  "titles": {
+    "fallback": "鲨鲨酱",
+    "en_US": "Shark Chan",
+    "zh_CN": "鲨鲨酱",
+    "zh_TW": "鯊鯊醬",
+    "zh_HK": "鯊鯊醬"
+  },
+  "descriptions": {},
+  "buildInThumbnails": [
+      "preview_lockscreen_mask_0.png"
+  ],
+  "buildInPreviews": [
+    "preview_lockscreen_mask_0.png",
+    "preview_launcher_mask_0.png",
+    "preview_launcher_mask_1.png",
+    "preview_statusbar_mask_0.png",
+    "preview_statusbar_mask_1.png",
+    "preview_contact_0.png",
+    "preview_mms_0.png",
+    "preview_mms_1.png",
+    "preview_animation_0.png",
+    "preview_fonts_0.jpg",
+    "preview_fonts_1.jpg",
+    "preview_fonts_2.jpg",
+    "preview_fonts_3.jpg"
+  ],
+  "builtInThumbnails": {
+    "en_US": [
+      "en_US_lockscreen_mask_0.png"
+    ],
+    "zh_CN": [
+      "preview_lockscreen_mask_0.png"
+    ]
+  },
+  "builtInPreviews": {
+    "en_US": [
+      "en_US_lockscreen_mask_0.png",
+      "en_US_launcher_mask_0.png",
+      "en_US_launcher_mask_1.png",
+      "en_US_statusbar_mask_0.png",
+      "en_US_statusbar_mask_1.png",
+      "en_US_contact_0.jpg",
+      "en_US_mms_0.jpg",
+      "en_US_mms_1.jpg",
+      "preview_animation_0.jpg",
+      "en_US_fonts_0.jpg",
+      "en_US_fonts_1.jpg",
+      "en_US_fonts_2.jpg",
+      "en_US_fonts_3.jpg"
+
+    ],
+    "zh_CN": [
+      "preview_lockscreen_mask_0.png",
+      "preview_launcher_mask_0.png",
+      "preview_launcher_mask_1.png",
+      "preview_statusbar_mask_0.png",
+      "preview_statusbar_mask_1.png",
+      "preview_contact_0.jpg",
+      "preview_mms_0.jpg",
+      "preview_mms_1.jpg",
+      "preview_animation_0.jpg",
+      "preview_fonts_0.jpg",
+      "preview_fonts_1.jpg",
+      "preview_fonts_2.jpg",
+      "preview_fonts_3.jpg"
+    ]
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [],
+  "subResources": [
+    {
+      "localId": "3fa78eb0-25dd-4d4d-a8c0-53fb4bde93b6",
+      "resourceCode": "wallpaper",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    },
+    {
+      "localId": "8d400c6e-1bbd-463d-a03c-3753a236937c",
+      "resourceCode": "lockscreen",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    },
+    {
+      "localId": "dc017860-c613-489e-8268-4c7515805b4c",
+      "resourceCode": "clock_2x4",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    },
+    {
+      "localId": "36c0dc3e-ff07-4e4c-9b62-a56863fac435",
+      "resourceCode": "icons",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    },
+    {
+      "localId": "8139459e-1b05-49e7-97ec-29e220c94035",
+      "resourceCode": "plugin_config.xml",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null
+}

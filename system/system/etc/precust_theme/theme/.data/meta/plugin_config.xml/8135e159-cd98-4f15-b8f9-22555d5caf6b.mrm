@@ -1,0 +1,46 @@
+{
+  "localId": "8135e159-cd98-4f15-b8f9-22555d5caf6b",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "2a9f13040cfb5f19ba7aa20eb2cda56fc98527fd",
+  "platform": 8,
+  "size": 187,
+  "updatedTime": 0,
+  "version": "1.0",
+  "authors": {
+    "fallback": "BLACKSHARK"
+  },
+  "designers": {
+    "fallback": "BLACKSHARK"
+  },
+  "titles": {
+    "zh_TW": "夜行者",
+    "zh_CN": "夜行者",
+    "fallback": "Green light"
+  },
+  "descriptions": {},
+  "builtInThumbnails": {
+    "fallback": []
+  },
+  "builtInPreviews": {
+    "fallback": []
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [
+    {
+      "localId": "57671c99-fd22-470c-a6ec-d8528dbb2bde",
+      "resourceCode": "theme",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "subResources": [],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null
+}

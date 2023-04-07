@@ -1,0 +1,35 @@
+##acs start service
+service bs_dump_enable /system/bin/acs -w -z debug -e dump -v 1 -k 0
+	class main
+	disabled
+	oneshot
+	seclabel u:r:acs:s0
+
+service bs_dump_disable /system/bin/acs -w -z debug -e dump -v 0 -k 0
+	class main
+	disabled
+	oneshot
+	seclabel u:r:acs:s0
+
+on property:persist.vendor.download_mode=1
+    start bs_dump_enable
+on property:persist.vendor.download_mode=0
+    start bs_dump_disable
+
+#for control dmcache
+service dmcache_enable /system/bin/acs -w -z debug -e dmcache -v 1 -k 1
+        class main
+        disabled
+        oneshot
+        seclabel u:r:acs:s0
+
+service dmcache_disable /system/bin/acs -w -z debug -e dmcache -v 0 -k 1
+        class main
+        disabled
+        oneshot
+        seclabel u:r:acs:s0
+
+on property:persist.vendor.dmcache_enable=1
+    start dmcache_enable
+on property:persist.vendor.dmcache_enable=0
+    start dmcache_disable
