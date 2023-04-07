@@ -1,0 +1,13 @@
+{
+	"TrueSight":
+	[
+		{
+			"ConfigurePath":"Configure/25_FacialSmooth/configurationV2.json",
+			"Index":25
+		},
+		{
+			"ConfigurePath":"Configure/80_FacialRefineV2/configuration_capture.json",
+			"Index":80
+		}
+	]
+}

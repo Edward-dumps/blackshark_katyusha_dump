@@ -1,0 +1,36 @@
+on post-fs-data
+	mkdir /data/vendor/shark_ic 2771 root log
+
+on property:sys.boot_completed=1
+	start shark_ric_init
+	start shark_ric_run
+
+#shark_ric service
+service shark_ric_init /vendor/bin/SHARK_RIC -i
+	class main
+	disabled
+	oneshot
+	seclabel u:r:shark_ric:s0
+
+service shark_ric_run /vendor/bin/SHARK_RIC -r
+	class main
+	disabled
+	seclabel u:r:shark_ric:s0
+
+service shark_ric_file /vendor/bin/SHARK_RIC -f
+	class main
+	disabled
+	oneshot
+	seclabel u:r:shark_ric:s0
+
+on property:vendor.shark_ric.is.valid=0
+	stop shark_ric_file
+
+
+on property:vendor.shark_ric.is.valid=1
+	start shark_ric_file
+	setprop vendor.shark_ric.is.valid 3
+
+on property:vendor.shark_ric.is.valid=2
+	rm /data/vendor/shark_ic/shark_ric.log
+	setprop vendor.shark_ric.is.valid 4

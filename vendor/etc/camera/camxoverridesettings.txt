@@ -1,0 +1,125 @@
+multiCameraLogicalXMLFile=katyusha.xml
+# camera log
+logInfoMask=0x10098
+overrideLogLevels=0x1F
+
+# Bokeh
+isPhyicalMultiCameraSupported=TRUE
+bokehVendorID=1
+bokehRelightVerion=2
+supportedBokehRoleMask=0x1
+ismfnrbokehsupported=TRUE
+multiCameraSWFrameSyncInterval=0
+multiCameraHWSyncMask=1
+multiCameraFPSMatchMask=0x1
+multiCameraFrameSyncMask=0x1
+multiCameraExposureTimeMatch=FALSE
+
+# AF
+pdafHWEnable=TRUE
+disableFocusIndication=TRUE
+
+# Video EIS
+enableICAInGrid=1
+enableNCSService=1
+#Res1@FPS1|Res2@FPS2 ...,5--720P,6--1080P,8--4K,3001--8K
+vsquality=5@30|6@30|6@60|8@30|8@60
+iseispreviewSupported=TRUE
+is60fpseisSupported=TRUE
+
+# override Flash Current
+#overrideFlashTorchCurrent=160
+#overrideFlashVideoLightCurrent=150
+#overrideFlashSnapshotLightCurrent=500
+#overrideFlashPreviewLightCurrent=180
+
+#Enable GPU rotate
+enableGPURotation=TRUE
+
+FPSForHALOutputBufferCombined=120
+
+##Offline Stats Dump
+StatsDump=0
+
+#enable earlyPCR
+numPCRsBeforeStreamOn=1
+
+#enable camera pre init
+isEarlysettingsEnable=0x11
+
+# For CTS Reprocess Size
+minReprocessInputWidth=0x1FFF
+minReprocessInputHeight=0x1FFF
+
+#MFNR Frame Select
+MfnrDynamicFrameEnable=1
+MfnrDefaultFrameNumber=5
+
+# Video
+isVideoBeautifierSupported=TRUE
+isVideoBeautyEISSupported=TRUE
+isVideoBeautyScreenshotSupported=TRUE
+isColorRetentionSupported=TRUE
+isVideoColorRetentionBackSupported=TRUE
+isBeautyMakeupSupported=TRUE
+#Video bokeh
+isVideoBokehSupported=TRUE
+isFrontVideoBokehSupported=TRUE
+colorBokehVersion=0
+#Video filter
+isVideoFilterSupported=TRUE
+superVideoFilterVersion=1
+
+# AIIE Version
+AIEnhancementVersion=2
+
+#Enable shot2Shutter for zsl capture
+soundTimeWhenAnchor=1
+
+# MISDK
+algoCameraXEnabled=TRUE
+algoSDKEnabled=TRUE
+
+#hdr10plus
+VideoHdrAvailableConfigurations=hdr10plus:1080P@30|hdr10plus:1080P@60|hdr10plus:4k@30|hdr10plus:4k@60
+isParallelCameraDeviceSupported=FALSE
+
+# For FD
+FDClient=FDHWHybrid
+
+# HDR
+MFHDRHWEnable=FALSE
+
+#DME
+enableDMEbasedMCTF=1
+
+# SMMU
+MPMSizeThresToDisableDelayedUnmap=0
+MPMForceDisableDelayedUnmap=TRUE
+
+pluginBurstReqCnt=0x2
+pluginBurstReqCntForHeif=0x3
+
+# HalBufferMgrMode disable
+halBufferMgrMode=0
+
+#systrace
+traceGroupsEnable=0
+
+#flush time
+nodeResponseTime=50
+sessionResponseTimePadding=100
+
+# for MP software version
+logWarningMask=0
+logCoreCfgMask=0
+logDumpMask=0
+logInfoMask=0
+logRequestMapping=FALSE
+overrideLogLevels=1
+offlineLoggerEnableBackupLog=0
+SessionDumpForFlush=FALSE
+enableCameraCoreDumpBinary=FALSE
+enableCameraCoreDumpText=FALSE
+enableCameraSessionDump=FALSE
+overrideCameraCoreDumpLogging=TRUE

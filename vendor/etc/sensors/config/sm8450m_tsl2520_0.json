@@ -1,0 +1,186 @@
+{
+    "config":{
+        "hw_platform": ["Mikoyan","ZEUS"],
+        "soc_id": ["457", "305", "341"]
+    },
+    "tsl2520_0_platform":{
+        "owner": "sns_tsl2520",
+        ".config":{
+            "owner": "sns_tsl2520",
+            "bus_type":{ "type": "int", "ver": "0",
+                         "data": "0"
+                       },
+            "bus_instance":{ "type": "int", "ver": "0",
+                             "data": "4"
+                           },
+            "slave_config":{ "type": "int", "ver": "0",
+                             "data": "57"
+                           },
+            "min_bus_speed_khz":{ "type": "int", "ver": "0",
+                                  "data": "400"
+                                },
+            "max_bus_speed_khz":{ "type": "int", "ver": "0",
+                                  "data": "400"
+                                },
+            "reg_addr_type":{ "type": "int", "ver": "0",
+                              "data": "0"
+                            },
+            "dri_irq_num":{ "type": "int", "ver": "0",
+                            "data": "120"
+                          },
+            "irq_pull_type":{ "type": "int", "ver": "0",
+                              "data": "0"
+                            },
+            "irq_is_chip_pin":{ "type": "int", "ver": "0",
+                                "data": "1"
+                              },
+            "irq_drive_strength":{ "type": "int", "ver": "0",
+                                   "data": "0"
+                                 },
+            "irq_trigger_type":{ "type": "int", "ver": "0",
+                                 "data": "1"
+                               },
+            "num_rail":{ "type": "int", "ver": "0",
+                         "data": "1"
+                       },
+            "rail_on_state":{ "type": "int", "ver": "0",
+                              "data": "1"
+                            },
+            "vddio_rail":{ "type": "str", "ver": "0",
+                           "data": "/pmic/client/sensor_vddio_2"
+                         },
+            "rigid_body_type":{ "type": "int", "ver": "0",
+                                "data": "0"
+                              }
+        },
+        ".als":{
+            "owner": "sns_tsl2520",
+            ".fac_cal":{
+                "owner": "sns_tsl2520",
+                "scale":{ "type": "flt", "ver": "0",
+                          "data": "1.0"
+                        }
+            },
+            ".custom_cal":{
+                "owner": "sns_tsl2520",
+              "coef_0_a":{ "type": "flt", "ver": "0",
+                            "data": "0.1579"
+                          },
+              "coef_1_a":{ "type": "flt", "ver": "0",
+                            "data": "-1.8746"
+                          },
+              "dgf_a":{ "type": "flt", "ver": "0",
+                            "data": "7.4977"
+                          },
+              "coef_0_b":{ "type": "flt", "ver": "0",
+                            "data": "0.3706"
+                          },
+              "coef_1_b":{ "type": "flt", "ver": "0",
+                           "data": "-0.1922"
+                         },
+              "dgf_b":{ "type": "flt", "ver": "0",
+                            "data": "2.1261"
+                          },
+              "coef_0_c":{ "type": "flt", "ver": "0",
+                            "data": "2.4657"
+                          },
+              "coef_1_c":{ "type": "flt", "ver": "0",
+                           "data": "0.1241"
+                         },
+              "dgf_c":{ "type": "flt", "ver": "0",
+                            "data": "0.186"
+                          },
+              "thresh_1":{ "type": "flt", "ver": "0",
+                            "data": "0.186"
+                          },
+              "thresh_2":{ "type": "flt", "ver": "0",
+                            "data": "0.491"
+                          }
+            },
+            ".def_config":{
+                "owner": "sns_tsl2520",
+                "sample_time":{ "type": "flt", "ver": "0",
+                           "data": "1000.0"
+                         },
+                "num_samples":{ "type": "flt", "ver": "0",
+                           "data": "100.0"
+                         },
+                "wait_time":{ "type": "flt", "ver": "0",
+                           "data": "0"
+                         },
+                "wait_time_resolution":{ "type": "flt", "ver": "0",
+                           "data": "0"
+                         },
+                "agc_mode":{ "type": "flt", "ver": "0",
+                           "data": "0"
+                         },
+                "agc_num_samples":{ "type": "flt", "ver": "0",
+                           "data": "10.0"
+                         },
+                "persist":{ "type": "flt", "ver": "0",
+                           "data": "1.0"
+                         },
+                "gain0":{ "type": "flt", "ver": "0",
+                           "data": "6.0"
+                         },
+                "gain1":{ "type": "flt", "ver": "0",
+                           "data": "6.0"
+                         },
+                "auto_gain":{ "type": "flt", "ver": "1",
+                                "data": "1.0"
+                              },
+                "a_thrs_width":{ "type": "flt", "ver": "0",
+                                "data": "10.0"
+                              }
+            },
+          ".cal_target":{
+              "owner": "sns_tsl2520",
+              "lux_target":{ "type": "flt", "ver": "0",
+                                 "data": "300.0"
+                               },
+              "lux_target_tolerance":{ "type": "flt", "ver": "0",
+                                           "data": "20.0"
+                                         }
+          }            
+        },
+        ".placement":{
+            "owner": "sns_tsl2520",
+            "0":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "1":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "2":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "3":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "4":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "5":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "6":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "7":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "8":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "9":{ "type": "flt", "ver": "0",
+                  "data": "0.0"
+                },
+            "10":{ "type": "flt", "ver": "0",
+                   "data": "0.0"
+                 },
+            "11":{ "type": "flt", "ver": "0",
+                   "data": "0.0"
+                 }
+        }
+    }
+}

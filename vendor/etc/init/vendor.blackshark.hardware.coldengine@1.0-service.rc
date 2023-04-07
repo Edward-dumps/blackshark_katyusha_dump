@@ -1,0 +1,17 @@
+on property:sys.boot_completed=1
+    chmod 0666 /dev/ttyHS1
+    chown system system /dev/ttyHS1
+    chmod 0666 /sys/devices/platform/soc/998000.qcom,qup_uart/download_fw
+    chown system system /sys/devices/platform/soc/998000.qcom,qup_uart/download_fw
+    chmod 0666 /sys/devices/platform/soc/998000.qcom,qup_uart/mcu_wakeup
+    chown system system /sys/devices/platform/soc/998000.qcom,qup_uart/mcu_wakeup
+    start ced
+
+
+
+service ced /vendor/bin/hw/vendor.blackshark.hardware.coldengine@1.0-service
+    class hal
+    user root
+    group root system
+    capabilities SYS_NICE
+oneshot

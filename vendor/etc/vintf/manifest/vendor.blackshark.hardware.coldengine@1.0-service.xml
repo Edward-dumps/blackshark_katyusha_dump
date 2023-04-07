@@ -1,0 +1,12 @@
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.blackshark.hardware.coldengine</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IColdEngineDaemon</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IColdEngineDaemon/default</fqname>
+    </hal>
+</manifest>

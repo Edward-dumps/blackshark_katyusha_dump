@@ -1,0 +1,4 @@
+[
+{"sensorType":5,"requestDisplayEventType":6,"requestDisplayId":0,"threadName":"backlight2light-notify"},
+{"sensorType":5,"requestDisplayEventType":4,"requestDisplayId":0,"threadName":"freq2light-notify"}
+]

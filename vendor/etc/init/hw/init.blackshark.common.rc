@@ -1,0 +1,173 @@
+# Blackshark platform common init rc configs go here
+on charger
+    write /sys/class/qcom-battery/ship_mode_en 0
+
+on boot
+    chown system system /sys/class/qcom-battery/aging_running
+    chown system system /sys/class/qcom-battery/input_suspend
+    chown system system /sys/bus/spi/devices/spi0.0/fts_test
+    chown system system /sys/class/touch_test/test_dev/selftest
+    chown system system /sys/class/touch_test/test_dev/touch_info
+    chown system system /sys/bus/spi/devices/spi0.0/fts_upgrade_bin
+    chmod 0666 /dev/ndt
+    chown system system /dev/ndt
+    chown system system /mnt/vendor/persist/ndt
+    chmod 0666 /mnt/vendor/persist/ndt/fc_dim
+    chown system system /mnt/vendor/persist/ndt/fc_dim
+    chmod 0666 /mnt/vendor/persist/ndt/fc_sku
+    chown system system /mnt/vendor/persist/ndt/fc_sku
+    chmod 0666 /sys/ndt/switch
+    chown system system /sys/ndt/switch
+    chmod 0666 /sys/ndt/sensor_count
+    chown system system /sys/ndt/sensor_count
+#hawkeye devices
+    chmod 0664 /dev/heye_bms_svr
+    chmod 0664 /dev/heye_bms_clt
+    chmod 0664 /dev/heye_ems_svr
+    chmod 0664 /dev/heye_ems_clt
+
+on fs
+    #audio:smartpa cali para
+    mkdir /mnt/vendor/persist/audio 0777 system system
+    chmod 0666 /mnt/vendor/persist/audio/spkr_calib_l.bin
+    chmod 0666 /mnt/vendor/persist/audio/spkr_calib_r.bin
+
+on property:ro.build.id=*
+    write /sys/kernel/reboot/build_id  ${ro.build.id}
+
+# ffbm boot mode
+on property:ro.bootmode=ffbm-00
+    setprop init.svc.vendor.bslogd.start 1
+on property:ro.bootmode=ffbm-01
+    setprop init.svc.vendor.bslogd.start 1
+on property:ro.bootmode=ffbm-02
+    setprop init.svc.vendor.bslogd.start 1
+
+# charger boot mode
+on property:ro.bootmode=charger
+    setprop init.svc.vendor.bslogd.start 0
+
+#normal boot mode
+on property:sys.boot_completed=1
+    setprop init.svc.vendor.bslogd.start 1
+
+on property:ro.build.type=user && property:persist.vendor.phone.beta.state=2
+    setprop persist.vendor.offlinelog 0
+    setprop persist.vendor.stb_debug 0
+
+on property:persist.vendor.offlinelog=1 && property:init.svc.vendor.bslogd.start=1
+    setprop persist.sys.bslogd.logcatd bs_logcatd
+    setprop persist.sys.offlinelog.logcatkernel true
+
+on property:init.svc.vendor.bslogd.start=0
+    setprop persist.sys.bslogd.logcatd 0
+    setprop persist.sys.offlinelog.logcatkernel false
+
+on property:persist.vendor.offlinelog=0
+    setprop persist.sys.bslogd.logcatd 0
+    setprop persist.vendor.bslogd.battd 0
+    setprop persist.vendor.download_mode 0
+    setprop persist.vendor.ssr.enable_ramdumps 0
+    setprop persist.vendor.ssr.restart_level ALL_ENABLE
+    start bs_logcatd_sys_cl
+
+#on property:persist.vendor.download_mode=1
+#    write /sys/module/qcom_dload_mode/parameters/download_mode 1
+#    setprop persist.sys.pstore.path /sys/fs/pstore/console-ramoops-0
+#on property:persist.vendor.download_mode=0
+#    write /sys/module/qcom_dload_mode/parameters/download_mode 0
+
+on property:persist.vendor.stb_debug=1
+    setprop persist.vendor.panic_on_warn 1
+
+on property:persist.vendor.stb_debug=0
+    setprop persist.vendor.panic_on_warn 0
+
+on property:persist.vendor.panic_on_warn=1
+    write /proc/sys/kernel/panic_on_warn 1
+
+# Coresight early boot service
+service bs_early_boot_debug /vendor/bin/sh /vendor/bin/init.qti.kernel.debug.sh
+    class core
+    user root
+    oneshot
+    disabled
+    seclabel u:r:vendor-qti-testscripts:s0
+
+on property:vendor.all.modules.ready=1 && property:persist.vendor.download_mode=1
+    start bs_early_boot_debug
+
+on property:ro.build.type=user && property:persist.vendor.phone.beta.state=2
+    write /sys/module/sharkutil/parameters/pm_top_enable 0
+    write /sys/module/sharkutil/parameters/pm_ws_enable 0
+    write /sys/module/sharkutil/parameters/pm_polling_delay 60000
+    write /sys/module/soc_sleep_stats/parameters/pm_aosd_enable 0
+    write /sys/module/soc_sleep_stats/parameters/pm_rpmh_enable 0
+
+on property:persist.vendor.aging=*
+    write /sys/class/qcom-battery/aging_running ${persist.vendor.aging}
+
+on property:persist.vendor.offlinelog=1 && property:persist.vendor.bslogd.battd=0
+    setprop persist.vendor.bslogd.battd bs_battd
+
+on property:persist.vendor.offlinelog=0
+    setprop persist.vendor.bslogd.battd 0
+
+#battlog on /off
+on property:persist.vendor.bslogd.battd=bs_battd && property:persist.vendor.offlinelog=1 && property:init.svc.vendor.bslogd.start=1
+    mkdir /data/vendor/bslogs 0777 system system
+    mkdir /data/vendor/bslogs/battery 0777 system system
+    start bs_battd
+
+on property:persist.vendor.offlinelog=1
+    setprop persist.vendor.ssr.enable_ramdumps 1
+
+on property:persist.sys.audio.adsp.trigger_ssr=1
+  write /sys/kernel/boot_adsp/ssr 1
+  setprop persist.sys.audio.adsp.trigger_ssr 0
+
+on property:persist.vendor.bslogd.battd=0
+    stop bs_battd
+
+on property:sys.boot_completed=1
+   chown system system /sys/class/qcom-battery/charging_separate
+   write /sys/class/qcom-battery/aging_running ${persist.vendor.aging}
+   chown system system /sys/class/qcom-battery/fg_gauge_reset
+   chmod 0666 /sys/class/qcom-battery/fg_gauge_reset
+   chown system system /sys/class/qcom-battery/last_term_cyclecount
+   chmod 0666 /sys/class/qcom-battery/last_term_cyclecount
+
+#Factory test for nvme
+on property:ro.boot.factorybuild=1 && property:persist.vendor.blackshark.rawdata=0
+   exec -- /system/bin/make_f2fs /dev/block/nvme0n1
+   setprop persist.vendor.blackshark.rawdata 1
+
+on property:ro.boot.factorybuild=1 && property:persist.vendor.blackshark.rawdata=1
+   mkdir /data/nvmedisk 0771 system system
+   mount f2fs /dev/block/nvme0n1 /data/nvmedisk
+
+on property:sys.boot_completed=1
+   chown system system /data/nvmedisk
+
+#service of batlog
+service bs_battd /vendor/bin/battd
+    class late_start
+    user system
+    group system
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+on property:persist.sys.device_provisioned=1
+    write /sys/class/qcom-battery/ship_mode_en 0
+
+on property:sys.boot_completed=1 && property:persist.blackshark.feature.plugunplug_point=*
+    write /sys/class/qcom-battery/plugunplug_point ${persist.blackshark.feature.plugunplug_point}
+
+on property:sys.boot_completed=1 && property:persist.blackshark.feature.fg.log=*
+    write /sys/class/qcom-battery/fg_print_flag ${persist.blackshark.feature.fg.log}
+
+on property:sys.boot_completed=1 && property:persist.blackshark.feature.last_term_cyclecount=*
+    write /sys/class/qcom-battery/last_term_cyclecount ${persist.blackshark.feature.last_term_cyclecount}
+
+on property:sys.boot_completed=1 && property:sys.blackshark.fg_reset=1
+    write /sys/class/qcom-battery/fg_gauge_reset 1

@@ -1,0 +1,12 @@
+{
+  "config": {
+    "hw_platform": ["MTP","Mikoyan", "Dragon", "Surf", "katyusha", "ZEUS"],
+    "soc_id": ["457"]
+  },
+  "sns_mag_cal_config": {
+    "owner": "sns_mag_cal",
+    "anomaly_threshold": {"type": "flt","ver": "0",
+      "data": "200.0"
+    }
+  }
+}

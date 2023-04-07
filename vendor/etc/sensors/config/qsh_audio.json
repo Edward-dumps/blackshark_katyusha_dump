@@ -1,0 +1,9 @@
+{
+  "config": {
+  },
+  "qsh_audio": {
+    "owner": "qsh_audio",
+    "rp_svc_id": {"ver": "0","type": "int","data": "4104"},
+    "rp_svc_instance_id": {"ver": "0","type": "int","data": "0"}
+  }
+}

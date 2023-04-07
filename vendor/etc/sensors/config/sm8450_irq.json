@@ -1,0 +1,9 @@
+{
+  "config": {
+    "hw_platform": ["MTP","Mikoyan", "Dragon", "Surf", "katyusha", "ZEUS"],
+    "soc_id": ["457"]
+  },
+  "sns_irq": {
+    "owner": "sns_irq"
+  }
+}

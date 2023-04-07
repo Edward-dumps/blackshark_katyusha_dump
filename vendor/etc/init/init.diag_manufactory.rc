@@ -1,0 +1,18 @@
+on init
+    mkdir /mnt/hwdec 0644 system system
+
+service diag_manufactory /vendor/bin/diag_manufactory
+    class main
+    user root
+    group root system vendor_qti_diag
+
+service device_dect_srv /vendor/bin/device_dect_srv
+    class main
+    user root
+    group root system vendor_qti_diag
+    seclabel u:object_r:shell_exec:s0
+    seclabel u:object_r:vendor_shell_exec:s0
+    disabled
+
+on property:ro.boot.factorybuild=1
+    start device_dect_srv

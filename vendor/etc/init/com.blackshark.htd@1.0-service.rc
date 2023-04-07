@@ -1,0 +1,28 @@
+#on init && property:persist.vendor.hbp_touch=enable
+#    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ hbp_touch
+
+#on init && property:persist.vendor.hbp_touch=disable
+#    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ focaltech_touch
+
+#on boot
+#    chmod 0666 /dev/ht_input
+#    chown system system /dev/ht_input
+
+on boot
+    chmod 0666 /dev/tcm0
+    chown system system /dev/tcm0
+
+on post-fs-data
+    mkdir /data/vendor/syna 0770 system system
+
+on property:sys.boot_completed=1
+    chmod 0666 /dev/ht_input
+    chown system system /dev/ht_input
+    start htd
+
+service htd /vendor/bin/hw/com.blackshark.htd@1.0-service
+    class hal
+    user root
+    group root system
+    capabilities SYS_NICE
+oneshot

@@ -1,0 +1,4 @@
+service bs_wlan  /vendor/bin/hw/com.bswlan.wifi@1.0-service
+    class hal
+    user root
+    group system

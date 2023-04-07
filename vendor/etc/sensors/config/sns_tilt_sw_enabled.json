@@ -1,0 +1,11 @@
+{
+  "config": {
+    "hw_platform": ["MTP","Mikoyan", "Dragon", "Surf", "katyusha", "ZEUS"],
+    "soc_id": ["457"]
+  },
+  "sns_tilt": {
+    "owner": "sns_tilt",
+    "enabled": {"ver": "0","type": "int", "data": "1"
+    }
+  }
+}
