@@ -1,0 +1,14 @@
+product/app/WebViewGoogle/WebViewGoogle.apk
+product/priv-app/GmsCore/GmsCore.apk
+product/priv-app/Messages/Messages.apk
+product/priv-app/Velvet/Velvet.apk
+system/system/app/MIUIVideoPlayer/MIUIVideoPlayer.apk
+system/system/app/BsSound/BsSound.apk
+system/system/app/MiuiVideoPlayer/MiuiVideoPlayer.apk
+system/system/app/MiuiBiometric/MiuiBiometric.apk
+system/system/priv-app/MIUIGalleryGlobalExplore/MIUIGalleryGlobalExplore.apk
+system/system/priv-app/MiuiCamera/MiuiCamera.apk
+system/system/data-app/SharkMan/SharkMan.apk
+system_ext/apex/com.android.vndk.v30.apex
+system_ext/priv-app/Settings/Settings.apk
+vendor/etc/camera/st_license.lic

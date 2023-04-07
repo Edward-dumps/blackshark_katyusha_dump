@@ -1,0 +1,14 @@
+# missi-user 12 KTUS2208100OS00MP2 V11.0.0.0.SKTUSOS release-keys
+- manufacturer: blackshark
+- platform: taro
+- codename: katyusha
+- flavor: missi-user
+- release: 12
+- id: KTUS2208100OS00MP2
+- incremental: V11.0.0.0.SKTUSOS
+- tags: release-keys
+- fingerprint: ,release-keys
+- is_ab: true
+- brand: blackshark
+- branch: missi-user-12-KTUS2208100OS00MP2-V11.0.0.0.SKTUSOS-release-keys
+- repo: blackshark_katyusha_dump
